@@ -53,8 +53,11 @@ Note: Above lines are required for first time installation
 
 --> python manage.py createsuperuser
 
+
 9)- Runserver and open your browser:
 
 --> python manage.py runserver For webapp: localhost:8000
+
+10) - python manage.py collect static
 
 For admin access: localhost:8000/admin
