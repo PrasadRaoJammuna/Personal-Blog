@@ -1,6 +1,6 @@
 # Personal-Blog
 
-##### This is what i love, guys..! if want to do more lets do.
+##### This is what i love, guys..! if you want to do more, lets do it MAN.
 
 #Highlights of the project:
 
