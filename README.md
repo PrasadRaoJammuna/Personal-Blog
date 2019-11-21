@@ -5,6 +5,7 @@
 #Highlights of the project:
 
 <li>Blog posts </li>
+<li>CKEditor posts customizations (Specially for you) </li>
 <li>Categories</li>
 <li>Post Filters </li>
 <li>Drafts,Edit,Delete </li>
