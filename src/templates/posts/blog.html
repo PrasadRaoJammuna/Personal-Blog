@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">Blog
+    <small> {{cat}}</small>
+  </h1>
+
+
+ <!-- Page content  -->
+<div class="row">
+<div class="col-lg-7 mb">
+{% for post in posts %}
+{% if post.published %}
+
+
+   <div class="card h-20">
+
+        <a href='/blog/post/{{post.slug}}/'><img class="card-img-top img-fluid rounded img-thumbnail rounded mx-auto d-block" src="{{post.featured_image.url}}" alt="image" style="width:700px;height:400px;" ></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href='/blog/post/{{post.slug}}/'>{{post.title}}</a>
+         
+          </h4>
+           <i>{{post.created_at}}</i>
+          <p class="card-text">{{ post.description | safe | truncatewords:20 }}<a href='/blog/post/{{post.slug}}/' style='color:green;'>read more</a> </p>
+        </div>
+</div> 
+
+{% else %}
+{% endif %}
+
+
+
+  
+{% endfor %}
+ </div> 
+
+
+<!-- Page widget --> 
+
+ {% include "widget.html" %}
+  <!-- Page widget/ -->
+ </div>
+ 
+ <!-- Page content /-->
+
+   
+
+
+</div>
+<!-- /.container -->
+
+ 
+
+
+ <!-- Bootstrap core JavaScript -->
+  <script src="{static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock  %}

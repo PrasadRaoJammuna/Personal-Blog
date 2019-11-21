@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/blog-post.css" rel="stylesheet' %}">
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="container">
+  
+
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-7">
+
+    
+    {% for post in posts %}
+    {% if post.published %}
+  
+        <!-- Title -->
+        <h1 class="mt-3">{{post.title}}</h1>
+
+        <!-- Author -->
+        <p class="lead text-left">
+          <i>Published : </i>{{post.created_at}}</p> -by
+          {{post.author}} Prasad Rao Jammuna
+       
+
+        <!-- Date/Time -->
+        <p></p>
+   
+        <!-- Preview Image -->
+        <img class="img-fluid rounded img-thumbnail rounded mx-auto d-block" src="{{post.featured_image.url}}" style="width:1000px;height:500px;" alt="jp"> 
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">{{post.description | safe }} </p>
+        
+        
+
+
+    {% else %}
+    {% endif %}
+
+    {% endfor %}
+        
+      
+    </div>
+    <!-- /.row -->
+
+{% include "widget.html" %}
+
+   
+
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+{% endblock  %}
+
+
+
+
+
+
+
+ 
+
+        
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

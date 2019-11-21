@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class='container-fluid'>
+
+<center>
+
+<form method='POST' action='.' enctype='multipart/form-data'>{% csrf_token %}
+
+ {{ form.media }}
+{{ form.as_p }}
+
+<button type='submit' class="btn btn-success" >Add New</button>
+</form>
+
+</center>
+
+</div>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+{% endblock  %}

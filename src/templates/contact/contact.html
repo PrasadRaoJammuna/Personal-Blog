@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+ {% block pic_title %}
+ <div class="site-heading">
+    <h1>Contact Us</h1>
+    <span class="subheading">we are here to Help you, Feel free to send a message</span>
+</div>
+
+ {% endblock %}
+{% block content %}
+
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class ='container-fluid'>
+<div class="container">
+
+
+<div class='text-center'>
+    {% for message  in messages  %}
+        <h3 style='color:green;'>{{ message }}</h3>
+        {% endfor %}
+           
+</div>
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="." method="post">{% csrf_token %}
+          <fieldset>
+            <legend class="text-center">Contact us</legend>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Name</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+              </div>
+            </div>
+    
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Your E-mail</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+              </div>
+            </div>
+    
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Your message</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+              </div>
+            </div>
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+	</div>
+</div>
+<div>
+
+{% endblock  %}

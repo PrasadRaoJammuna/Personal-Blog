@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class='conatainer-fluid'>
+
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">published</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    {% for post in posts %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      
+      <td>{{post.title}}</td>
+      <td>{{post.created_at}}</td>
+      {% if not post.published %}
+      <td>
+      <button class="btn btn-warning"><a href = '/blog/edit/{{post.id}}/'>Draft</a></button>
+      <button class="btn btn-danger"><a href = '/blog/delete/{{post.id}}/'>Delete</a></button>
+
+      </td>
+      {% else %}
+      <td>
+      <button class="btn btn-success"><a href = '/blog/edit/{{post.id}}/'>Edit</a></button> 
+      <button class="btn btn-danger"><a href = '/blog/delete/{{post.id}}/'>Delete</a></button>
+      
+      </td>
+        
+      
+      {% endif %}
+      
+    </tr>
+   {% endfor %}
+
+  </tbody>
+</table>
+
+ </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock  %}
