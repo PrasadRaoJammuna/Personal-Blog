@@ -4,7 +4,7 @@ bs4==0.0.1
 certifi==2019.9.11
 chardet==3.0.4
 colorama==0.4.1
-Django==2.2.5
+Django==2.2.20
 django-ckeditor==5.8.0
 django-js-asset==1.2.2
 django-resized==0.3.9
